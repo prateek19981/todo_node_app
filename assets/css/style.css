@@ -2,5 +2,164 @@
 {
     margin:0;
     text-align: center;
+    box-sizing: border-box;
+    
 }
 
+h1
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: brown;
+}
+
+
+/* stylefortaskinput */
+.ip
+{
+    height: 50px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* styleforcategoryselecttag */
+
+.col1
+{
+    border: 1px solid red;
+    width: 50%;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+
+.col-md
+{
+    margin: 0;
+    padding: 0;
+}
+//styleforcategory
+.category
+{
+    height: 100%;
+    width: 100%;
+}
+
+#col2
+{
+    border: 1px solid red;
+    width: 50%;
+    height: 50px;
+    padding: 0;
+}
+
+
+/* //addbutton */
+#btn1
+{
+    width: 200px;
+    height: 100px;
+    transform: translate(-10px,50px);
+    padding: 0;
+    margin: 0;
+
+}
+
+/* //removebutton */
+#btn2
+{
+    width: 200px;
+    height: 100px;
+    transform: translate(0px,50px);
+
+}
+
+/* todoitem */
+#ro
+{
+    
+    padding: 10px;
+    transform: translate(15px,100px);
+    border-top: 3px solid brown;
+    border-bottom: 3px solid brown;
+    height: 80px;
+    width: 100%
+
+    
+    
+}
+
+
+/* ptag */
+p{
+    padding: 0;
+    margin-left: 40px;
+    
+}
+
+/* checkitem */
+#tick
+{
+    transform: translate(20px,0);
+    
+}
+/* icon */
+i
+{
+    transform: scale(1.5);
+}
+
+/* calendericon */
+#cal
+{
+    transform: translate(-65px,40px);
+    color: lightseagreen
+    
+    
+}
+
+/* date */
+#dt
+{
+    transform: translate(-100px,39px);
+    font-size: small;
+}
+
+/* taskafterchecked */
+.line
+{
+    text-decoration: line-through;
+}
+
+.lineup
+{
+    color: lime;
+}
+
+/* itemcontainer */
+#item-con
+{
+    margin: 0;
+    padding: 0;
+    transform: translate(0px,50px);
+    
+}
+
+
+.item-category
+{
+    height: 60px;
+    width: 200px;
+    background-color: lime;
+    transform: translate(800px);
+}
+
+.no-item
+{
+    height: 60px;
+    width: 200px;
+    background-color: white;
+    transform: translate(800px);
+}

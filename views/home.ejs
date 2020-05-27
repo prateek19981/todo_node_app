@@ -3,12 +3,111 @@
         <title>
             My todo App
         </title>
+
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+                         crossorigin="anonymous"></script>
+        <!-- popperjs -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <!-- bootstrap  -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!-- font awsome -->
+        <script src="https://use.fontawesome.com/e18bd336b2.js"></script>
+        <!-- custom css -->
+        <link rel="stylesheet" href="css/style.css">
+        
+
     </head>
    <body>
        <h1>
            To do App
        </h1>
-       
+        
+       <!-- used to send data to add task -->
+       <form action="/create" method="POST">
+               <!-- main container for input tag add/remove button,date and category select -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md">
+                        <input type="text" class="ip" placeholder="what do you want to do" name="task" required autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col-md" class="col1">
+                            <select name="category" class="category">
+                                <option value="">Choose a category</option>
+                                <option value="personal">personal</option>
+                                <option value="work">Work</option>
+                                <option value="school">School</option>
+                                <option value="cleaning">Cleaning</option>
+                                <option value="other">Other</option>
+                                </select>
+                        </div>
+                        <div class="col-md" class="col1">
+                            <input type="date" class="ip" valuer="enter date" name="date" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="btn1">Add</button>
+                        <a href="/remove"><button type="button" class="btn btn-danger" id="btn2">Remove</button></a>
+                        
+                    </div>
+
+
+        </form>
+
+
+        
+         <!-- this is container is used for each added task -->
+        <div class id="item-con"> 
+
+            <% if(todo_list.length==0) { %>
+                <h1>Start Adding Some tasks</h1>
+    
+    
+            <%}%>
+
+            <% for(let i of todo_list) {%>
+            <div class="row" id="ro">
+
+                
+                <% if(i.category) {%>
+                <div class="item-category">
+                    <h2><%=i.category%></h2>
+                </div>
+
+                
+                <%}else{%>
+                    <div class="no-item"></div>
+                <%}%>
+
+
+                
+                <% if(i.select==false) { %>
+                <a href="/select?id=<%=i.id%>" id="tick">  <i class="fa fa-check" aria-hidden="true"></i></a>
+                 <p id="task">  <%=i.task %>   </p>
+
+                 <%} else { %>
+                    <a href="/select?id=<%=i.id%>" id="tick" class="lineup">  <i class="fa fa-check" aria-hidden="true"></i></a>
+                    <p id="task" class="line"> <%=i.task %>   </p>
+                 <% } %>
+
+                <i class="fa fa-calendar-check-o" aria-hidden="true" id="cal"></i>
+                <p id="dt"> 
+                    <%=i.created_at %>
+                </p>
+
+            </div>
+            <br>
+            <br>
+            <% } %>
+            
+        </div>       
+
+    <!-- custom js -->
+   <script src="js/script.js"></script>
    </body>
 
 

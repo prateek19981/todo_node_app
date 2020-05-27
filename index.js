@@ -1,7 +1,20 @@
 
 const express = require("express");
+const db = require("./config/mongoose");
+const todo = require("./model/todo");
 const port = 8000;
 const app = express();
+
+//htmlparser
+app.use(express.urlencoded())
+
+
+
+
+//static
+app.use(express.static("./assets"));
+
+
 
 //setup router
 app.use('/',require("./routes"));
