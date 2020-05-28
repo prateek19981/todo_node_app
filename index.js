@@ -1,5 +1,6 @@
 
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const db = require("./config/mongoose");
 const todo = require("./model/todo");
 const port = 8000;
@@ -7,6 +8,9 @@ const app = express();
 
 //htmlparser
 app.use(express.urlencoded())
+
+//cookie
+app.use(cookieParser());
 
 
 

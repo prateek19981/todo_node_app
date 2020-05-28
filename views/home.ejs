@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="row" >
-                        <div class="col-md" class="col1">
+                        <div class="col-md" class="col1" >
                             <select name="category" class="category">
                                 <option value="">Choose a category</option>
                                 <option value="personal">personal</option>
@@ -89,7 +89,7 @@
                 <a href="/select?id=<%=i.id%>" id="tick">  <i class="fa fa-check" aria-hidden="true"></i></a>
                  <p id="task">  <%=i.task %>   </p>
 
-                 <%} else { %>
+                 <%} else if(i.select==true) { %>
                     <a href="/select?id=<%=i.id%>" id="tick" class="lineup">  <i class="fa fa-check" aria-hidden="true"></i></a>
                     <p id="task" class="line"> <%=i.task %>   </p>
                  <% } %>

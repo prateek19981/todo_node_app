@@ -40,7 +40,7 @@ h1
     margin: 0;
     padding: 0;
 }
-//styleforcategory
+/* styleforcategory */
 .category
 {
     height: 100%;
@@ -104,6 +104,12 @@ p{
 {
     transform: translate(20px,0);
     
+    
+}
+
+#tick:hover
+{
+    color: brown;
 }
 /* icon */
 i

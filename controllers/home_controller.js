@@ -1,11 +1,14 @@
 // importmodel
 const Todo = require('../model/todo');
 
+
+
 // exportcontroller
 
 // homecontroller
 module.exports.home = function(req,res){
 
+   console.log(req.cookies);
    Todo.find({},function(err,todo)
    {
        if(err)
@@ -42,19 +45,24 @@ module.exports.select = function(req,res){
 
     console.log("inside update");
     let id = req.query.id;
-    Todo.findByIdAndUpdate(id,{select:true},function(err,result){
+    Todo.findById(id,function(err,result){
         if(err)
         {
             console.log("err in finding",err);
             return;
         }
-       
-        
-        console.log("inside update",result);
+        if(result.select==false)
+        {
+            result.select=true;
+        }
+        else
+        {
+            result.select=false;
+        }
 
-    
-
-    });
+        console.log(result.select);
+        result.save();
+});
   
     
 

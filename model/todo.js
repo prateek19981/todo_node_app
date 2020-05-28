@@ -1,5 +1,7 @@
+// import mongoose
 const mongoose = require("mongoose");
 
+// create a new todo schema
 const todoSchema = new mongoose.Schema({
     task:{
         type:String,
@@ -20,9 +22,13 @@ const todoSchema = new mongoose.Schema({
     }
 });
 
+
+// create a model
 const Todo = mongoose.model('Todo',todoSchema);
 
 
 
+
+// export the model
 module.exports = Todo;
 
